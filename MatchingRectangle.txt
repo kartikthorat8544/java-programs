@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class MatchingRectangle {
+
+    double Rectangle(int l, int b) {
+        return l * b; // Correct area formula for rectangle
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int l1, l2, b1, b2;
+        String colour1, colour2;
+
+        System.out.println("Welcome to the Matching Rectangle program");
+
+        System.out.println("Enter length & breadth of 1st rectangle: ");
+        l1 = in.nextInt();
+        b1 = in.nextInt();
+
+        System.out.println("Enter length & breadth of 2nd rectangle: ");
+        l2 = in.nextInt();
+        b2 = in.nextInt();
+
+        System.out.println("Enter colour of 1st and 2nd rectangle respectively:");
+        colour1 = in.next();
+        colour2 = in.next();
+
+        MatchingRectangle M = new MatchingRectangle();
+
+        double Area1 = M.Rectangle(l1, b1);
+        double Area2 = M.Rectangle(l2, b2);
+
+        if ((Area1 == Area2) && (colour1.equals(colour2))) {
+            System.out.println("Both Rectangles are matching");
+        } else {
+            System.out.println("Rectangles are not matching");
+        }
+
+        in.close();
+    }
+}
